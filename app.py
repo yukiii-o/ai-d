@@ -113,11 +113,11 @@ def detect_ai_text(text):
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="AI Text Detector", page_icon="🤖")
-st.title("🤖 AI vs Human Text Detector")
+st.title("AI Detector")
 
 user_input = st.text_area("Enter a sentence or paragraph to check:", height=150)
 
-if st.button("Analyze"):
+if st.button("Scan"):
     if user_input.strip() == "":
         st.warning("Please enter some text.")
     else:
@@ -127,4 +127,3 @@ if st.button("Analyze"):
         st.write(f"**Confidence:** {confidence:.2f}%")
 
 st.markdown("---")
-st.caption("This tool uses a simple Naive Bayes model on a small dataset. For better accuracy, expand the dataset or use larger ML models.")
