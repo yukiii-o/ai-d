@@ -7,7 +7,6 @@ data = [
     ("AI-generated text is often indistinguishable from human writing.", 1),
     ("In the course of this life I have had a great many encounters with a great many people who have been concerned with matters of consequence.", 1),
 ("If one gets lost in the night, such knowledge is valuable.", 1),
-("Then I would never talk to that person about boa constrictors, or primeval forests, or stars.", 1)
 ("Remember, I had crashed in the desert a thousand miles from any inhabited region.", 1),
 ("When a mystery is too overpowering, one dare not disobey.", 1),
 ("But I had never drawn a sheep.", 1),
