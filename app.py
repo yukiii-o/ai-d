@@ -3,35 +3,6 @@ import streamlit as st
 # Streamlit page setup
 st.set_page_config(page_title="AI Text Detector", page_icon="🤖", layout="centered")
 
-# Dark Mode Toggle
-dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=False)
-
-if dark_mode:
-    st.markdown(
-        """
-        <style>
-        .main {background-color: #121212;}
-        .stTextInput textarea {background-color: #2b2b2b; color: white;}
-        .stButton button {background-color: #444; color: white;}
-        .stMarkdown {color: white;}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-else:
-    st.markdown(
-        """
-        <style>
-        .main {background-color: #ffffff;}
-        .stTextInput textarea {background-color: #ffffff; color: black;}
-        .stButton button {background-color: #0078d4; color: white;}
-        .stMarkdown {color: black;}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-# Heading and input UI
 st.title("AIDENTIFY - AI Text Detector")
 st.markdown("Welcome! Paste a sentence or paragraph below and find out if it was **AI-generated** or **Human-written**.")
 
@@ -39,7 +10,7 @@ st.markdown("Welcome! Paste a sentence or paragraph below and find out if it was
 user_input = st.text_area("Input your text here:", height=200, placeholder="Type or paste your text...")
 
 # Detection logic triggers on button click
-if st.button("Scan") and user_input.strip():
+if st.button("SCAN") and user_input.strip():
     # ====== Begin original code block ======
 
     import math
@@ -151,12 +122,10 @@ if st.button("Scan") and user_input.strip():
 
     result, confidence = detect_ai_text(user_input)
 
-    # Displaying result with a dynamic confidence bar
+    # Output section
     st.markdown("### 📊 Result:")
     st.success(f"**Prediction:** {result}")
-    st.progress(confidence / 100)  # Confidence bar
-
     st.info(f"**Confidence:** {confidence:.2f}%")
 
 else:
-    st.markdown(" Enter a sentence and click the button to get a prediction.")
+    st.markdown("Enter a sentence and click the button to get a prediction.")
