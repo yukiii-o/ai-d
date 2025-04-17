@@ -1,16 +1,16 @@
 import streamlit as st
 
 # Streamlit page setup
-st.set_page_config(page_title="AI Text Detector", page_icon="🤖", layout="centered")
+st.set_page_config(page_title="AI Text Detector", page_icon="🧠", layout="centered")
 
-st.title("AIDENTIFY - AI Text Detector")
+st.title("🤖 AI Text Detector")
 st.markdown("Welcome! Paste a sentence or paragraph below and find out if it was **AI-generated** or **Human-written**.")
 
 # Large input area
-user_input = st.text_area("Input your text here:", height=200, placeholder="Type or paste your text...")
+user_input = st.text_area("✍️ Input your text here:", height=200, placeholder="Type or paste your text...")
 
 # Detection logic triggers on button click
-if st.button("SCAN") and user_input.strip():
+if st.button("🔍 Analyze Text") and user_input.strip():
     # ====== Begin original code block ======
 
     import math
@@ -118,7 +118,7 @@ if st.button("SCAN") and user_input.strip():
         prediction = classifier.predict([vector])[0]
         proba = classifier.predict_proba([vector])[0]
         confidence = proba[prediction] * 100
-        return ("AI-generated" if prediction == 1 else "Human-written", confidence)
+        return ("🤖 AI-generated" if prediction == 1 else "🧠 Human-written", confidence)
 
     result, confidence = detect_ai_text(user_input)
 
@@ -128,4 +128,8 @@ if st.button("SCAN") and user_input.strip():
     st.info(f"**Confidence:** {confidence:.2f}%")
 
 else:
-    st.markdown("Enter a sentence and click the button to get a prediction.")
+    st.markdown("💡 Enter a sentence and click the button to get a prediction.")
+
+# Footer
+st.markdown("---")
+st.caption("Made with ❤️ by your custom Naive Bayes AI detector.")
