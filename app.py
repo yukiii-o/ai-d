@@ -126,6 +126,6 @@ if st.button("SCAN") and user_input.strip():
     st.markdown("### 📊 Result:")
     st.success(f"**Prediction:** {result}")
     st.info(f"**Confidence:** {confidence:.2f}%")
-  print("Thank you for using our program :) ")
+
 else:
     st.markdown("Enter a sentence and click the button to get a prediction.")
